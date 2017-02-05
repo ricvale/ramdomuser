@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      <ion-icon name="people" item-left></ion-icon> Randomuser.me
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="home">
+  
+   <ion-list>
+        <button ion-item *ngFor="let person of people" (click) = "itemSelected(person)">
+      
+            <ion-avatar item-left>
+                <img src="{{person.picture.thumbnail}}">
+            </ion-avatar>
+            <h2 style="text-transform:capitalize;">{{person.name.first}} {{person.name.last}}</h2>
+            <p style="text-transform:capitalize;">
+              <ion-icon name="globe" item-left></ion-icon>{{person.location.city}} ( {{person.nat}} )
+            </p>
+      
+        </button>
+    </ion-list>
+
+</ion-content>
